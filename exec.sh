@@ -2,4 +2,4 @@
 
 cd /var/lib/jenkins/workspace/Midtermjob
 
-python3 serve.py
+nohup python3 serve.py > server.log 2>&1 &
