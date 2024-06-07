@@ -1,0 +1,27 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <table>
+        {% for row in range(3) %}
+        <tr>
+            {% for col in range(3) %}
+            <td>
+                <form method="POST" action="/">
+                    <input type="hidden" name="row" value="{{ row }}">
+                    <input type="hidden" name="col" value="{{ col }}">
+                    <button type="submit">{{ board[row][col] }}</button>
+                </form>
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    <p>{{ message }}</p>
+</body>
+</html>
